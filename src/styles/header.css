@@ -1,0 +1,15 @@
+.header-top-div {
+  @apply bg-white w-full px-4 md:px-8;
+}
+.header {
+  @apply flex items-center justify-between py-4 md:py-8;
+}
+.left-link {
+  @apply text-black inline-flex items-center gap-2.5 text-2xl font-bold md:text-3xl;
+}
+.category-link-text {
+  @apply text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700;
+}
+.category-link-text2 {
+  @apply inline-flex items-center gap-1 text-lg font-semibold text-indigo-500;
+}

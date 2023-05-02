@@ -1,0 +1,11 @@
+.blog-top-div {
+  @apply flex flex-col items-center overflow-hidden rounded-lg border md:flex-col shadow hover:translate-y-1 transition duration-300;
+}
+
+.blog-second-div {
+  @apply relative block h-32 w-full shrink-0 self-start overflow-hidden bg-gray-100 md:w-32 lg:w-full;
+}
+
+.preview-image {
+  @apply absolute inset-0 h-full w-full object-cover object-center transition duration-200;
+}
