@@ -9,3 +9,7 @@
 .preview-image {
   @apply absolute inset-0 h-full w-full object-cover object-center transition duration-200;
 }
+
+.blog-body {
+  @apply [&_a]:text-green-500 [&_pre]:m-5;
+}

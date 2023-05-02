@@ -1,5 +1,5 @@
 import Header from "@/components/header";
-import { tmpblogs, tmpheaders } from "@/constants/constants";
+import { tmpheaders } from "@/constants/constants";
 import { client } from "../../libs/client";
 import formatIsoToJst from "@/utility/timeconvert";
 // export type BlogProps = {
@@ -14,12 +14,14 @@ import formatIsoToJst from "@/utility/timeconvert";
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
 
-  const paths = data.contents.map((content) => `/blog/${content.id}`);
+  const paths = data.contents.map(
+    (content: { id: any }) => `/blog/${content.id}`
+  );
   return { paths, fallback: false };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: { params: { id: any } }) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", contentId: id });
 
@@ -38,7 +40,7 @@ export default function BlogId({ blog }) {
       <Header categories={tmpheaders.categories} logoSrc={tmpheaders.logoSrc} />
       <main className="w-screen flex justify-center gap-4">
         <div className="p-4 w-7/12">
-          <section className="">
+          <section className="blog-body">
             <div className="mb-6">
               <p className="text-xs inline-block mx-2">{`投稿日: ${postDate}`}</p>
               <p className="text-xs inline-block mx-2">{`更新日: ${updateDate}`}</p>

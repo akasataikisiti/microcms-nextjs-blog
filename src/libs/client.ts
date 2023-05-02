@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { MicroCMSListResponse, createClient } from "microcms-js-sdk";
+import { createClient } from "microcms-js-sdk";
 
 // console.log(process.env.SERVICE_DOMAIN);
 export const client = createClient({

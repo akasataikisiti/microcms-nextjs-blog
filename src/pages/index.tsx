@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import Header from "../components/header";
-import { nonImgUrl, tmpblogs, tmpheaders } from "@/constants/constants";
+import { nonImgUrl, tmpheaders } from "@/constants/constants";
 import Brog from "@/components/blog";
 import getBlogList, { cmsBlog } from "@/libs/client";
 
@@ -15,6 +15,7 @@ export async function getStaticProps() {
     props: {
       blogs: data,
     },
+    revalidate: 60 * 60,
   };
 }
 
