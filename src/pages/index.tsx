@@ -4,6 +4,7 @@ import Header from "../components/header";
 import { nonImgUrl, tmpheaders } from "@/constants/constants";
 import Brog from "@/components/blog";
 import getBlogList, { cmsBlog } from "@/libs/client";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export async function getStaticProps() {
 
 export default function Home({ blogs }: { blogs: cmsBlog[] }) {
   return (
-    <>
+    <Suspense fallback={<div>loading</div>}>
       <Head>
         <title>MyBlog</title>
       </Head>
@@ -46,6 +47,6 @@ export default function Home({ blogs }: { blogs: cmsBlog[] }) {
           </div>
         </div>
       </main>
-    </>
+    </Suspense>
   );
 }
