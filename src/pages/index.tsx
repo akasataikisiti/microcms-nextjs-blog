@@ -23,7 +23,7 @@ export default function Home({ blogs }: { blogs: cmsBlog[] }) {
   return (
     <>
       <Head>
-        <title>test</title>
+        <title>MyBlog</title>
       </Head>
       <Header categories={tmpheaders.categories} logoSrc={tmpheaders.logoSrc} />
       <main
