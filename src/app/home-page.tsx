@@ -1,32 +1,16 @@
 import { Inter } from "next/font/google";
 import Head from "next/head";
-import Header from "../components/header";
+import Header from "@/app/components/header";
 import { nonImgUrl, tmpheaders } from "@/constants/constants";
-import Brog from "@/components/blog";
+import Brog from "@/app/components/blog";
 import getBlogList, { cmsBlog } from "@/libs/client";
 import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-//SSG
-export async function getStaticProps() {
-  const data = await getBlogList();
-  console.log(data);
-  return {
-    props: {
-      blogs: data,
-    },
-    revalidate: 60 * 60,
-  };
-}
-
-export default function Home({ blogs }: { blogs: cmsBlog[] }) {
+export default function HomePage({ blogs }: { blogs: cmsBlog[] }) {
   return (
     <Suspense fallback={<div>loading</div>}>
-      <Head>
-        <title>MyBlog</title>
-      </Head>
-      <Header categories={tmpheaders.categories} logoSrc={tmpheaders.logoSrc} />
       <main
         className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
       >

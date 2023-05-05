@@ -12,7 +12,7 @@ export type BlogProps = {
 
 const Brog: FC<BlogProps> = (props: BlogProps) => {
   return (
-    <a href={`/blog/${props.id}`}>
+    <a href={`/post/${props.id}`}>
       <div className="blog-top-div">
         <div className=" group blog-second-div">
           <Image
