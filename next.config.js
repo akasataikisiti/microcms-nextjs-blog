@@ -11,6 +11,9 @@ const nextConfig = {
       // `${process.env.SERVICE_DOMAIN}.com`,
     ],
   },
+  experimental: {
+    appDir: true,
+  },
 };
 
 module.exports = nextConfig;

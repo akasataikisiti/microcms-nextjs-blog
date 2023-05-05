@@ -1,10 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { createClient } from "microcms-js-sdk";
 
-// console.log(process.env.SERVICE_DOMAIN);
 export const client = createClient({
-  // serviceDomain: "kskmyblog" || "",
-  // apiKey: "9KdxtceUSxAYj2Y7ItvcRb0GELhMdtSKQv2k" || "",
   serviceDomain: process.env.SERVICE_DOMAIN || "",
   apiKey: process.env.API_KEY || "",
 });
@@ -25,23 +22,20 @@ export type cmsBlog = {
   };
 };
 
-export default async function getBlogList(): Promise<cmsBlog[]> {
+export async function getBlogList(): Promise<cmsBlog[]> {
   const response = await client.getList<cmsBlog>({ endpoint: "blog" });
   const blog = response.contents;
-  console.log(blog);
   // console.log(blog.contents[0].preview);
   return blog;
 }
+//
+// データをテンプレートに受け渡す部分の処理を記述します
+export async function getPost(id: string): Promise<cmsBlog> {
+  const data: cmsBlog = await client.get({ endpoint: "blog", contentId: id });
 
-// export default async function getBlogList(): Promise<
-//   MicroCMSListResponse<Blog>
-// > {
-//   const blog = await client.getList<Blog>({ endpoint: "blog" });
-//   console.log(blog);
-//   // console.log(blog.contents[0].preview);
-//   return blog;
-// }
+  return data;
+}
 
-getBlogList()
-  .then((res) => console.log(res))
-  .catch((err) => console.log(err));
+// getBlogList()
+//   .then((res) => console.log(res))
+//   .catch((err) => console.log(err));
