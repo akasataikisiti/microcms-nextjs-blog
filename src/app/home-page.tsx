@@ -1,9 +1,7 @@
 import { Inter } from "next/font/google";
-import Head from "next/head";
-import Header from "@/app/components/header";
-import { nonImgUrl, tmpheaders } from "@/constants/constants";
+import { nonImgUrl } from "@/constants/constants";
 import Brog from "@/app/components/blog";
-import getBlogList, { cmsBlog } from "@/libs/client";
+import { cmsBlog } from "@/libs/client";
 import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -11,8 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export default function HomePage({ blogs }: { blogs: cmsBlog[] }) {
   return (
     <Suspense fallback={<div>loading</div>}>
+      <div className="h-32"></div>
       <main
-        className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+        className={`flex min-h-[calc(100vh-150px)] flex-col items-center justify-between ${inter.className}`}
       >
         <div className="w-9/12">
           <div className="grid grid-cols-3 gap-4">

@@ -14,8 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <Header categories={tmpheaders.categories} logoSrc={tmpheaders.logoSrc} />
-      <body>{children}</body>
+      <body>
+        <Header
+          categories={tmpheaders.categories}
+          logoSrc={tmpheaders.logoSrc}
+        />
+        {children}
+      </body>
     </html>
   );
 }

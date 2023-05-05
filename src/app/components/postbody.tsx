@@ -1,6 +1,6 @@
 export default function PostBody({ post }) {
   return (
-    <div className="p-4 w-6/12 bg-yellow-100 rounded-md my-3">
+    <div className="p-4 min-h-[calc(100vh-150px)] w-6/12 bg-yellow-100 rounded-md my-3">
       <section className="blog-body">
         <div className="mb-6">
           <p className="text-xs inline-block mx-2">{`投稿日: ${post.createdAt}`}</p>

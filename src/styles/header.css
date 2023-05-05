@@ -1,5 +1,5 @@
 .header-top-div {
-  @apply fixed z-40 bg-gray-600 h-28 w-full px-4 md:px-8;
+  @apply z-40 bg-gray-600 h-28 w-full px-4 md:px-8;
 }
 .header {
   @apply flex z-0 items-center justify-between py-4 md:py-8;
