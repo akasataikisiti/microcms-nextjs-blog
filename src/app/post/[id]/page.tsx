@@ -2,7 +2,7 @@ import { client, cmsBlog, getPost } from "@/libs/client";
 import PostBody from "@/app/components/postbody";
 
 // 静的生成のためのパスを指定します
-export async function generateStatisParams() {}
+// export async function generateStaticPaths() {}
 
 export default async function BlogId({ params }) {
   const id = params.id;

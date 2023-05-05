@@ -1,5 +1,5 @@
-import { BlogProps } from "../components/blog";
-import { HeaderProps } from "../components/header";
+import { BlogProps } from "@/app/components/blog";
+import { HeaderProps } from "@/app/components/header";
 
 export const tmpblogs: BlogProps[] = [
   {
