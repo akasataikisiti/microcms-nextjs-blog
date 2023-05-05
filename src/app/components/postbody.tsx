@@ -1,3 +1,4 @@
+"use client";
 export default function PostBody({ post }) {
   return (
     <div className="p-4 min-h-[calc(100vh-150px)] w-6/12 bg-yellow-100 rounded-md my-3">

@@ -1,3 +1,4 @@
+"use client";
 import { Inter } from "next/font/google";
 import { nonImgUrl } from "@/constants/constants";
 import Brog from "@/app/components/blog";
